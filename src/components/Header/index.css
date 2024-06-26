@@ -1,0 +1,31 @@
+.header-container {
+  padding: 24px;
+  background-color: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-title-container {
+  display: flex;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .sm-hamburger-container {
+    display: none;
+  }
+}
+.header-title {
+  margin: 0;
+  padding: 0;
+  /* width: 115px;   */
+  height: 24px;
+  top: 20px;
+  left: 71px;
+  font-family: DM Sans;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 24px;
+  text-align: left;
+  color: #f7931e;
+}
