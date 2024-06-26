@@ -1,9 +1,19 @@
+/* eslint-disable camelcase */
 import './index.css'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import Cookies from 'js-cookie'
 import {useHistory} from 'react-router-dom'
 
 export default function Login() {
+  const history = useHistory()
+  useEffect(() => {
+    const jwt_token = Cookies.get('jwt_token')
+    if (jwt_token) {
+      history.replace('/')
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   return (
     <div>
       <div className="container sm-login-container">
