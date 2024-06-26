@@ -29,3 +29,18 @@
   text-align: left;
   color: #f7931e;
 }
+.hamburger-btn {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.lg-nav-link-container {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .lg-nav-link-container {
+    display: block;
+  }
+}

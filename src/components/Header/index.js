@@ -1,4 +1,12 @@
 import './index.css'
+import {Link} from 'react-router-dom'
+import Popup from 'reactjs-popup'
+
+import 'reactjs-popup/dist/index.css'
+
+const overlayStyle = {
+  marginTop: '54px',
+}
 
 export default function Header() {
   return (
@@ -42,22 +50,53 @@ export default function Header() {
         </svg>
         <h1 className="header-title">Tasty Kitchens</h1>
       </div>
-      <div className="sm-hamburger-container">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M3.94849 6H20.0515C20.5735 6 21.0005 6.427 21.0005 6.949V7.051C21.0005 7.573 20.5735 8 20.0515 8H3.94849C3.42649 8 3.00049 7.573 3.00049 7.051V6.949C3.00049 6.427 3.42649 6 3.94849 6ZM20.0515 11H3.94849C3.42649 11 3.00049 11.427 3.00049 11.949V12.051C3.00049 12.573 3.42649 13 3.94849 13H20.0515C20.5735 13 21.0005 12.573 21.0005 12.051V11.949C21.0005 11.427 20.5735 11 20.0515 11ZM20.0515 16H3.94849C3.42649 16 3.00049 16.427 3.00049 16.949V17.051C3.00049 17.573 3.42649 18 3.94849 18H20.0515C20.5735 18 21.0005 17.573 21.0005 17.051V16.949C21.0005 16.427 20.5735 16 20.0515 16Z"
-            fill="#183B56"
-          />
-        </svg>
+      <div className="lg-nav-link-container">
+        <Navbar />
       </div>
+      <div className="sm-hamburger-container">
+        <Popup
+          modal
+          overlayStyle={overlayStyle}
+          trigger={
+            // eslint-disable-next-line jsx-a11y/control-has-associated-label
+            <button type="button" className="hamburger-btn">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M3.94849 6H20.0515C20.5735 6 21.0005 6.427 21.0005 6.949V7.051C21.0005 7.573 20.5735 8 20.0515 8H3.94849C3.42649 8 3.00049 7.573 3.00049 7.051V6.949C3.00049 6.427 3.42649 6 3.94849 6ZM20.0515 11H3.94849C3.42649 11 3.00049 11.427 3.00049 11.949V12.051C3.00049 12.573 3.42649 13 3.94849 13H20.0515C20.5735 13 21.0005 12.573 21.0005 12.051V11.949C21.0005 11.427 20.5735 11 20.0515 11ZM20.0515 16H3.94849C3.42649 16 3.00049 16.427 3.00049 16.949V17.051C3.00049 17.573 3.42649 18 3.94849 18H20.0515C20.5735 18 21.0005 17.573 21.0005 17.051V16.949C21.0005 16.427 20.5735 16 20.0515 16Z"
+                  fill="#183B56"
+                />
+              </svg>
+            </button>
+          }
+        >
+          {close => (
+            <>
+              <Navbar />
+              <button type="button" onClick={() => close()}>
+                Close
+              </button>
+            </>
+          )}
+        </Popup>
+      </div>
+    </div>
+  )
+}
+
+export function Navbar() {
+  return (
+    <div className="nav-link-container">
+      <Link to="/">Home</Link>
+      <Link to="/cart">Cart</Link>
+      <button type="button">Logout</button>
     </div>
   )
 }
