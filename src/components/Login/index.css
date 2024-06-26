@@ -115,7 +115,7 @@ input {
   }
   .login-lg-img {
     width: 50vw;
-    height: 100%;
+    height: 100vh;
   }
   .login-title {
     margin-top: 0;
