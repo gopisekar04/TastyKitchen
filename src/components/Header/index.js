@@ -94,7 +94,9 @@ export default function Header() {
 export function Navbar() {
   return (
     <div className="nav-link-container">
-      <Link to="/">Home</Link>
+      <Link to="/" className="">
+        <p>Home</p>
+      </Link>
       <Link to="/cart">Cart</Link>
       <button type="button">Logout</button>
     </div>
